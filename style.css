@@ -1,5 +1,19 @@
-div {
-    background-color: rgb(103, 163, 216);
+main {
+    margin: auto;
+    padding: 5px;
+    width: 350px;
+    height: 350px;
+    background-color: aqua;
+}
+
+.square {
+    background-color: rgb(0, 0, 0);
     width: 100px;
     height: 100px;
+    display: inline-block;
+    margin: 5px;
+}
+
+.square:hover {
+    background-color: aliceblue;
 }
