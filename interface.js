@@ -4,12 +4,12 @@
     const body = document.querySelector('body')
     const main = document.createElement('main')
     body.insertAdjacentElement("afterbegin", main)
-    for (let i = 1; i <= 9; i++) {
+    for (let i = 1; i < 10; i++) {
         const square = document.createElement('div');
         square.className = 'square';
         square.id = i;
         main.insertAdjacentElement('beforeend', square);
-        // square.innerHTML = 'X';
+
     }
 }())
 
@@ -41,8 +41,3 @@ function updateSquares() {
     })
 }
 
-function getSeq() {
-
-
-
-}

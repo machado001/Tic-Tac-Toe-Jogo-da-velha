@@ -1,16 +1,26 @@
-const board = ['', '', '', '', '', '', '', '', ''];
+const board = ['', '', '', '', '', '', '', '', '',];
 let playerTime = 0;
 const symbols = ['x', 'o'];
+let gameOver = false;
 
 function handleMove(position) {
-    board[position] = symbols[playerTime];
-    if (playerTime == 0) {
-        playerTime = 1
+    if (gameOver) {
+        return;
     }
-    else {
-        playerTime = 0
-    }
+    if (board[position] == '') {
+        board[position] = symbols[playerTime];
+        gameOver = isWin()
+        if (gameOver == false) {
+            if (playerTime == 0) {
+                playerTime = 1;
 
+            } else {
+                playerTime = 0;
+            }
+
+        }
+    }
+    return gameOver;
 }
 
 function isWin() {
@@ -22,18 +32,21 @@ function isWin() {
         [1, 4, 7],
         [2, 5, 8],
         [0, 4, 8],
-        [2, 4, 6]
+        [2, 4, 6],
     ]
-    winStates.forEach(
-        (subArray) => {
-            subArray.forEach(
-                (subItem) => {
-                    let x = subArray.indexOf(subItem)
-                    console.log(x)
-                }
-            )
+    for (let i = 0; i < winStates.length; i++) {
+        let seq = winStates[i];
+        let pos1 = seq[0];
+        let pos2 = seq[1];
+        let pos3 = seq[2];
+        console.log(pos1, pos2, pos3);
+        console.log(board[pos1])
+        if (board[pos1] == board[pos2] &&
+            board[pos1] == board[pos3] &&
+            board[pos1] != '') {
+            return true;
         }
+    }
 
-    )
+    return false;
 }
-isWin()
