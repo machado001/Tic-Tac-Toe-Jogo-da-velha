@@ -2,7 +2,6 @@ const board = ['', '', '', '', '', '', '', '', '',];
 let playerTime = 0;
 const symbols = ['x', 'o'];
 let gameOver = false;
-
 function handleMove(position) {
     if (gameOver) {
         return;
@@ -17,12 +16,10 @@ function handleMove(position) {
             } else {
                 playerTime = 0;
             }
-
         }
     }
     return gameOver;
 }
-
 function isWin() {
     let winStates = [
         [0, 1, 2],
@@ -50,3 +47,5 @@ function isWin() {
 
     return false;
 }
+console.log(!gameOver)
+console.log(gameOver)

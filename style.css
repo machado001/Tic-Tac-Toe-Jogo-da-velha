@@ -7,6 +7,7 @@ main {
     transform: translateY(20%);
     position: relative;
 }
+
 .square {
     background-color: rgb(214, 91, 91);
     width: 100px;
@@ -15,16 +16,15 @@ main {
     margin: 5px;
     position: relative;
 }
+
 .square:hover {
     background-color: aliceblue;
     border: 1px solid black;
 }
 
-.o {
 
-}
-.o::after{
-    content:'O';
+.o::after {
+    content: 'O';
     text-align: center;
     /* line-height: 100%; */
     font-size: 5rem;
@@ -34,11 +34,9 @@ main {
     left: 0;
     right: 0;
 }
-.o {
 
-}
-.x::after{
-    content:'X';
+.x::after {
+    content: 'X';
     text-align: center;
     /* line-height: 100%; */
     font-size: 5rem;
@@ -47,5 +45,5 @@ main {
     bottom: 0;
     left: 0;
     right: 0;
-    
+
 }
